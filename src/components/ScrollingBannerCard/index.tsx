@@ -46,22 +46,14 @@ export const ScrollingBannerCard: FunctionComponent<ScrollingBannerCardPropertie
   const Link = styled.a`
     color: ${props.announcementlinkcolor} !important;
     text-decoration: underline;
-    &:hover, &:active, &:visited {
+    &:hover, &:active, &:focus, &:visited {
       text-decoration: none;
     }
   `
 
   return (
     <div style={bannerStyle}>
-      <AnimationDiv style={contentStyle}>
-        <strong>{props.announcementtitle}:</strong> {props.announcementmessage} 
-        <Link 
-          href={props.announcementlink}
-          target="_blank"
-          rel="noopener noreferrer">
-            {props.announcementlinktitle}
-        </Link>
-      </AnimationDiv>
+      <AnimationDiv style={contentStyle}><strong>{props.announcementtitle}:</strong> {props.announcementmessage} <Link href={props.announcementlink} target="_blank" rel="noopener noreferrer">{props.announcementlinktitle}</Link></AnimationDiv>
     </div>
   );
 };
