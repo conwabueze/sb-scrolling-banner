@@ -1,16 +1,3 @@
-/*!
- * Copyright 2020, Staffbase GmbH and contributors.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *     http://www.apache.org/licenses/LICENSE-2.0
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import { UiSchema } from "@rjsf/core";
 import { JSONSchema7 } from "json-schema";
 
@@ -19,54 +6,77 @@ import { JSONSchema7 } from "json-schema";
  * see https://react-jsonschema-form.readthedocs.io/en/latest/ for documentation
  */
 export const configurationSchema: JSONSchema7 = {
-  properties: {
-    // announcements: {
-    //   type: "array",
-    //   title: "Announcements",
-    //   items: {
-    //     type: "object",
-    //     required: [
-    //       "title"
-    //     ],
-    //     properties: {
-    //       title: {
-    //         type: "string",
-    //         title: "Title"
-    //       },
-    //       details: {
-    //         type: "string",
-    //         title: "Details"
-    //       }
-    //     }
-    //   }
-    // },
-    // sliderOpts: {
-    //   type: "object",
-    //   title: "Slider Options",
-    //   properties: {
-    //     pauseSlider: {
-    //       type: "boolean",
-    //       title: "Pause slider on mouse over"
-    //     }
-    //   }
-    // },
-    bgcolor: {
+  required: [
+    "title",
+    "announcementtitle",
+    "announcementmessage"
+  ],
+  properties: {  
+    title: {
+      type: "string",
+      title: "Title"
+    },
+    showtitle: {
+      type: "boolean",
+      title: "Show Title"
+    },
+    titlecolor: {
+      type: "string",
+      title: "Title Color",
+      default: "#333333"
+    },
+    announcementtitle: {
+      type: "string",
+      title: "Announcement Title",
+      default: "Breaking News"
+    },
+    announcementmessage: {
+      type: "string",
+      title: "Announcement Message",
+      default: "Some announcement message to catch the viewer's attention."
+    },
+    announcementlink: {
+      type: "string",
+      format: "uri",
+      title: "Announcement Link",
+      default: "https://app.maximize-it.eu/"
+    },
+    announcementlinktitle: {
+      type: "string",
+      title: "Announcement Link Title",
+      default: "Read more"
+    },
+    announcementlinkcolor: {
+      type: "string",
+      title: "Announcement Link Color",
+      default: "#FFFFFF"
+    },
+    pauseonhover: {
+      type: "boolean",
+      title: "Pause slider on mouse hover.",
+      default: true
+    },
+    animationspeed: {
+      type: "integer",
+      title: "Animation speed",
+      default: 10,
+      minimum: 1,
+      maximum: 50
+    },
+    bannercolorbg: {
       type: "string",
       title: "Background Color",
-      default: "#FBC91E",
+      default: "#FBC91E"
     },
-    textcolor: {
+    bannercolorborder: {
+      type: "string",
+      title: "Border Color",
+      default: "#FBC91E"
+    },
+    bannercolortext: {
       type: "string",
       title: "Text Color",
-      default: "#FFFFFF",
-    },
-    pauseslider: {
-      type: "boolean",
-      title: "Pause slider on mouse over",
-    },
-    date: {
-      type: "string",
-      title: "Forecast Date",
+      default: "#FFFFFF"
     },
   },
 };
@@ -76,15 +86,51 @@ export const configurationSchema: JSONSchema7 = {
  * @see https://react-jsonschema-form.readthedocs.io/en/latest/api-reference/uiSchema/
  */
 export const uiSchema: UiSchema = {
-  bgcolor: {
-    "ui:widget": "color"
+  title: {
+    "ui:autofocus": true,
+    "ui:emptyValue": "",
+    "ui:autocomplete": "off",
+    "ui:help": "Choose a title for the scrolling banner."
   },
-  textcolor: {
-    "ui:widget": "color"
+  showtitle: {
+    "ui:help": "Do you want to display the title?"
   },
-  date: {
-    "ui:help":
-      "Enter a date to get a weather forecast. Leave empty to show the current weather information.",
-    "ui:widget": "date",
+  titlecolor: {
+    "ui:widget": "color",
+    "ui:help": "Choose a color for the title of the scrolling banner. Default: #333333"
+  },
+  announcementtitle: {
+    "ui:help": "Enter an announcement title."
+  },
+  announcementmessage: {
+    "ui:help": "Enter an announcement message."
+  },
+  announcementlink: {
+    "ui:help": "Enter an announcement link with more information."
+  },
+  announcementlinktitle: {
+    "ui:help": "Enter a text for the announcement link."
+  },
+  announcementlinkcolor: {
+    "ui:widget": "color",
+    "ui:help": "Choose a color for the announcement link. Default: #FFFFFF"
+  },
+  pauseonhover: {
+    "ui:help": "Do you want to pause the slider on mouse hover?"
+  },
+  animationspeed: {
+    "ui:help": "Enter an animation speed (in s) for the scrolling banner."
+  },
+  bannercolorbg: {
+    "ui:widget": "color",
+    "ui:help": "Choose a color for the background of the scrolling banner. Default: #FBC91E"
+  },
+  bannercolorborder: {
+    "ui:widget": "color",
+    "ui:help": "Choose a color for the border of the scrolling banner. Default: #FBC91E"
+  },
+  bannercolortext: {
+    "ui:widget": "color",
+    "ui:help": "Choose a color for the text in the scrolling banner. Default: #FFFFFF"
   },
 };
