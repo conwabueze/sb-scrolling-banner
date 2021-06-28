@@ -38,16 +38,22 @@ export const ScrollingBannerCard: FunctionComponent<ScrollingBannerCardPropertie
 
   const AnimationDiv = styled.div`
     animation: ${marqueeAnimation} ${props.animationspeed}s linear infinite;
+    &:hover {
+      animation-play-state: paused;
+    }
   `
 
-  const linkStyle: CSS.Properties = {
-    color: props.announcementlinkcolor,
-    textDecoration: "underline",
-  };
+  const Link = styled.a`
+    color: ${props.announcementlinkcolor} !important;
+    text-decoration: underline;
+    &:hover, &:active, &:visited {
+      text-decoration: none;
+    }
+  `
 
   return (
     <div style={bannerStyle}>
-      <AnimationDiv style={contentStyle}><strong>{props.announcementtitle}:</strong> {props.announcementmessage} <a style={linkStyle} href={props.announcementlink} target="_blank" rel="noopener noreferrer">{props.announcementlinktitle}</a></AnimationDiv>
+      <AnimationDiv style={contentStyle}><strong>{props.announcementtitle}:</strong> {props.announcementmessage} <Link href={props.announcementlink} target="_blank" rel="noopener noreferrer">{props.announcementlinktitle}</Link></AnimationDiv>
     </div>
   );
 };

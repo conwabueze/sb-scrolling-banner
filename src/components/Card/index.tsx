@@ -8,6 +8,7 @@ export interface CardProperties {
 }
 
 export const Card: FunctionComponent<CardProperties> = (props) => {
+  
   const cardStyle: CSS.Properties = {
     display: "block",
     textAlign: "center",
