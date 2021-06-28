@@ -53,7 +53,7 @@ export const configurationSchema: JSONSchema7 = {
     },
     pauseonhover: {
       type: "boolean",
-      title: "Pause slider on mouse hover.",
+      title: "Pause Slider On Hover",
       default: true
     },
     animationspeed: {
@@ -72,6 +72,11 @@ export const configurationSchema: JSONSchema7 = {
       type: "string",
       title: "Border Color",
       default: "#FBC91E"
+    },
+    showborder: {
+      type: "boolean",
+      title: "Show Border",
+      default: true
     },
     bannercolortext: {
       type: "string",
@@ -128,6 +133,9 @@ export const uiSchema: UiSchema = {
   bannercolorborder: {
     "ui:widget": "color",
     "ui:help": "Choose a color for the border of the scrolling banner. Default: #FBC91E"
+  },
+  showborder: {
+    "ui:help": "Do you want to use colored rounded corners?"
   },
   bannercolortext: {
     "ui:widget": "color",

@@ -19,9 +19,10 @@ export interface CustomWidgetScrollingBannerProps extends BlockAttributes {
   announcementlinkcolor: string,
   pauseonhover: boolean,
   animationspeed: number,
+  showborder: boolean,
 }
 
-export const CustomWidgetScrollingBanner = ({ title, showtitle, titlecolor, bannercolorbg, bannercolorborder, bannercolortext, announcementtitle, announcementmessage, announcementlink, announcementlinktitle, announcementlinkcolor, pauseonhover, animationspeed, contentLanguage }: CustomWidgetScrollingBannerProps): ReactElement => {
+export const CustomWidgetScrollingBanner = ({ title, showtitle, titlecolor, bannercolorbg, bannercolorborder, bannercolortext, announcementtitle, announcementmessage, announcementlink, announcementlinktitle, announcementlinkcolor, pauseonhover, animationspeed, showborder, contentLanguage }: CustomWidgetScrollingBannerProps): ReactElement => {
 
   return <ScrollingBannerView
     {...{
@@ -38,6 +39,7 @@ export const CustomWidgetScrollingBanner = ({ title, showtitle, titlecolor, bann
       announcementlinkcolor,
       pauseonhover,
       animationspeed,
+      showborder,
       contentLanguage,
     }}
   />

@@ -37,7 +37,7 @@ const factory: BlockFactory = (BaseBlockClass, _widgetApi) => {
      */
     public static get observedAttributes(): string[] {
       const defaults = ["content-language", "widget-title", "on-card"];
-      return [...defaults, "title", "showtitle", "titlecolor", "bannercolorbg", "bannercolorborder", "bannercolortext", "announcementtitle", "announcementmessage", "announcementlink", "announcementlinktitle", "announcementlinkcolor","pauseonhover", "animationspeed"];
+      return [...defaults, "title", "showtitle", "titlecolor", "bannercolorbg", "bannercolorborder", "bannercolortext", "announcementtitle", "announcementmessage", "announcementlink", "announcementlinktitle", "announcementlinkcolor","pauseonhover", "animationspeed", "showborder"];
     }
 
     /**
@@ -56,7 +56,7 @@ const factory: BlockFactory = (BaseBlockClass, _widgetApi) => {
 const blockDefinition: BlockDefinition = {
     name: "custom-widget-scrolling-banner",
     factory: factory,
-    attributes: ['title','showtitle','titlecolor','bannercolorbg','bannercolortext','bannercolorborder','announcementtitle','announcementmessage','announcementlink','announcementlinktitle','announcementlinkcolor','pauseonhover','animationspeed'],
+    attributes: ['title','showtitle','titlecolor','bannercolorbg','bannercolortext','bannercolorborder','announcementtitle','announcementmessage','announcementlink','announcementlinktitle','announcementlinkcolor','pauseonhover','animationspeed','showborder'],
     blockLevel: 'block',
     configurationSchema: configurationSchema,
     uiSchema: uiSchema,

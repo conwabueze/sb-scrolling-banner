@@ -22,9 +22,10 @@ import { ScrollingBannerCard } from "../components/ScrollingBannerCard";
     announcementlinkcolor: string,
     pauseonhover: boolean,
     animationspeed: number,
+    showborder: boolean,
 }
 
-export const ScrollingBannerView: FunctionComponent<CustomWidgetScrollingBannerProps> = ({ title, showtitle, titlecolor, bannercolorbg, bannercolorborder, bannercolortext, announcementtitle, announcementmessage, announcementlink, announcementlinktitle, announcementlinkcolor, pauseonhover, animationspeed }: CustomWidgetScrollingBannerProps) => {
+export const ScrollingBannerView: FunctionComponent<CustomWidgetScrollingBannerProps> = ({ title, showtitle, titlecolor, bannercolorbg, bannercolorborder, bannercolortext, announcementtitle, announcementmessage, announcementlink, announcementlinktitle, announcementlinkcolor, pauseonhover, animationspeed, showborder }: CustomWidgetScrollingBannerProps) => {
 
     const isTitleShown = typeof showtitle == "string" ? showtitle === "true" : !!showtitle;
 
@@ -38,7 +39,8 @@ export const ScrollingBannerView: FunctionComponent<CustomWidgetScrollingBannerP
         <Card
             bannercolorbg={bannercolorbg}
             bannercolorborder={bannercolorborder}
-            bannercolortext={bannercolortext} >
+            bannercolortext={bannercolortext}
+            showborder={showborder} >
             <ScrollingBannerCard
                 announcementtitle={announcementtitle}
                 announcementmessage={announcementmessage}
