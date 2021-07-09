@@ -15,5 +15,5 @@ export const Title: FunctionComponent<TitleProperties> = (props) => {
     margin: "5px 0px",
   };
 
-  return <h2 style={titleStyle}>{props.title}</h2>;
+  return <h2 style={titleStyle} className="cwScrollingBannerComponentsTitle">{props.title}</h2>;
 };

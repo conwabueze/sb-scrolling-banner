@@ -31,11 +31,11 @@ export const Card: FunctionComponent<CardProperties> = (props) => {
     border-color: ${props.bannercolorborder};
   `
 
-  return <div>
+  return <div className="cwScrollingBannerComponentsCard">
     { isBorderShown ? 
-      (<StyledCardWithBorder>{props.children}</StyledCardWithBorder>) 
+      (<StyledCardWithBorder className="cwScrollingBannerComponentsCardWithBorder">{props.children}</StyledCardWithBorder>) 
       : 
-      (<StyledCardWithoutBorder>{props.children}</StyledCardWithoutBorder>) 
+      (<StyledCardWithoutBorder className="cwScrollingBannerComponentsCardWithoutBorder">{props.children}</StyledCardWithoutBorder>) 
     }
     </div>;
 };

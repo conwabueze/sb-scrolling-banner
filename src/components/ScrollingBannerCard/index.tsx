@@ -52,8 +52,8 @@ export const ScrollingBannerCard: FunctionComponent<ScrollingBannerCardPropertie
   `
 
   return (
-    <div style={bannerStyle}>
-      <AnimationDiv style={contentStyle}><strong>{props.announcementtitle}:</strong> {props.announcementmessage} <Link href={props.announcementlink} target="_blank" rel="noopener noreferrer">{props.announcementlinktitle}</Link></AnimationDiv>
+    <div style={bannerStyle} className="cwScrollingBannerComponentsScollingBannerCard">
+      <AnimationDiv style={contentStyle}  className="cwScrollingBannerComponentsScollingBannerCardAnimation"><strong>{props.announcementtitle}:</strong> {props.announcementmessage} <Link  className="cwScrollingBannerComponentsScollingBannerCardLink" href={props.announcementlink} target="_blank" rel="noopener noreferrer">{props.announcementlinktitle}</Link></AnimationDiv>
     </div>
   );
 };

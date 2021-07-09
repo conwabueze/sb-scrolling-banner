@@ -29,7 +29,7 @@ export const ScrollingBannerView: FunctionComponent<CustomWidgetScrollingBannerP
 
     const isTitleShown = typeof showtitle == "string" ? showtitle === "true" : !!showtitle;
 
-    return ( <div>
+    return ( <div className="cwScrollingBannerView">
         { isTitleShown ? 
             <Title 
                 title={title}
