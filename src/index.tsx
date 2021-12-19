@@ -60,7 +60,7 @@ const blockDefinition: BlockDefinition = {
     blockLevel: 'block',
     configurationSchema: configurationSchema,
     uiSchema: uiSchema,
-    label: 'Scrolling Banner',
+    label: 'DEMO: Scrolling Banner',
     iconUrl: "https://maximizeit.github.io/sb-custom-widget-scrolling-banner/resources/scrolling-banner-icon.png",
 };
 
